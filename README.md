@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+1. What is React and why do we use it?
+React is a JavaScript library used to build reusable and dynamic user interfaces. It uses a component-based architecture and Virtual DOM to efficiently update the UI and improve performance.
 
-## Getting Started
+2. What is the difference between props and state?
+Props are used to pass data from parent to child components and are read-only, whereas state is used to manage dynamic data within a component and can be updated using setState or useState.
 
-First, run the development server:
+3. What is Virtual DOM and how does it improve performance?
+Virtual DOM is a lightweight copy of the real DOM. When state changes, React creates a new Virtual DOM, compares it with the previous one (diffing), and updates only the changed parts in the real DOM, improving performance.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+4. What is useEffect and what is dependency array?
+useEffect is a React hook used to handle side effects like API calls, subscriptions, and DOM manipulation. It runs after render, and the dependency array controls when it executes — for example, an empty array runs it only once on mount.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+5. What is the difference between useMemo and useCallback?
+useMemo is used to memoize the result of an expensive computation and recomputes only when dependencies change, whereas useCallback memoizes a function so that the same function reference is preserved between renders. Both are used for performance optimization to prevent unnecessary recalculations or re-renders.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+6. What is lifting state up? Give real example ?
+Lifting state up is a pattern where state is moved to a common parent component so it can be shared between child components. The parent passes data and callback functions to children for communication.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+7. const arr = [1, 2, 3];
+const result = arr.map((num) => {
+  if (num > 1) return num * 2;
+});
+console.log(result);
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+output: [undefined, 4, 6];

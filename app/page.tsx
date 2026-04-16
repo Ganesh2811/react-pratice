@@ -2,6 +2,8 @@
 import { useMemo, useState } from "react";
 import ChildA from "../components/ChildA";
 import ChildB from "../components/ChildB";
+import ChildD from "../components/ChildD";
+
 
 export default function Home() {
   const[add, setAdd] = useState(0);
@@ -16,19 +18,24 @@ export default function Home() {
   const multiply = useMemo(() => {
     console.log("******************");
     return add * 9
-  },[add])
+  },[add]);
+
+  function getData(data: any){
+    console.log(data);
+  }
 
   return (
     <>
-      {/* <h1>hello world</h1>
-      <ChildA />
+      <h1>hello world</h1>
+      {/* <ChildA />
       <h1>Use Memo</h1>
       {multiply}
       <button onClick={() => { setAdd(add + 1) }}>Add</button>
       <span>{add}</span>
       <button onClick={() =>{ setMinus(minus - 1) }}>Sub</button>
       <span>{minus}</span> */}
-      <ChildB />
+      {/* <ChildB /> */}
+      <ChildD name={"Ganesh Pawar"} getData={getData}/>
     </>
   );
 } 
